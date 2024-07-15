@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frappe Activity</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2F3C52;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 14px 16px;
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            justify-content: right;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: #f0f4f8;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            padding: 5px;
+            font-size: 15px;
+            color: dodgerblue;
+            text-decoration: none;
+        }
+
+        .classify-activity {
+            background-color: white;
+            padding: 1rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .classify-activity h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: cornflowerblue;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .predict-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #2F3C52;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+
+        .predict-button:hover {
+            background-color: #1f2a38;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="float: left;font-size: 30px;">FRAPPE ACTIVITY</li>
+                <li><a href="http://127.0.0.1:5500/templates/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/templates/about.html">About</a></li>
+                <li><a href="http://127.0.0.1:5500/templates/contact.html">Contact</a></li>
+                <li><a href="/predict">Classify Activity</a></li>
+            </ul>
+        </nav>  
+    </header>
+    <main>
+        <div class="logo">
+            <a href="/home">Home</a>
+            <h1 style="margin-left: 50px;">Classify Activity</h1>
+        </div>
+        <section class="classify-activity">
+            <h2>Enter the Details</h2>
+            <form action="/predictionpage" method="POST">
+
+                <div class="form-group">
+                    <label  for="item">Item:</label>
+                    <input type="number" id="item" name="item" required><br><br>
+
+                    <label for="daytime">Time of Day</label>
+                    <select name="daytime" id="daytime">
+                        <option value="">Click to open</option>
+                        <option value="Morning">morning</option>
+                        <option value="Afternoon">afternoon</option>
+                        <option value="Evening">evening</option>
+                        <option value="Night">night</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="weekday">Day of the Week</label>
+                    <select name="weekday" id="weekday">
+                        <option value="">Click to open</option>
+                        <option value="Sunday">sunday</option>
+                        <option value="Monday">monday</option>
+                        <option value="Tuesday">tuesday</option>
+                        <option value="Wednesday">wednesday</option>
+                        <option value="Thursday">thursday</option>
+                        <option value="Friday">friday</option>
+                        <option value="Saturday">saturday</option>
+                    </select>
+                </div>
+                <!--div class="form-group">
+                    <label for="isweekday">Day of the Week</label>
+                    <select name="isweekday" id="isweekday">
+                        <option value="">Click to open</option>
+                        <option value="weekend">weekend</option>
+                        <option value="weekdayday">weekdayday</option>
+                    </select>
+                </div-->
+
+                <div class="form-group">
+                    <label for="cost">Cost</label>
+                    <select name="cost" id="cost">
+                        <option value="">Click to open</option>
+                        <option value="Free">free</option>
+                        <option value="Paid">paid</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="weather">Weather</label>
+                    <select name="weather" id="weather">
+                        <option value="">Click to open</option>
+                        <option value="Sunny">sunny</option>
+                        <option value="Rainy">rainy</option>
+                        <option value="Cloudy">cloudy</option>
+                        <option value="Snowy">snowy</option>
+                    </select>
+                    <label for="city">city:</label>
+                    <input type="number" id="city" name="city" required><br><br>
+                </div>
+                <div class="form-group">
+                    <label for="sname">Name</label>
+                    <select name="sname" id="sname">
+                        <option value="">Click to open</option>
+                        <option value="Any.Do To-do & Task List">Any.Do To-do & Task List</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Whatsapp">Whatsapp</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Yahoo!">Yahoo!</option>
+                    </select>
+                </div-->
+                
+                <button type="submit" class="predict-button">Predict</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

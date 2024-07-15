@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frappe Activity</title>
+    <style>
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2F3C52;
+            color: white;
+            padding: 1rem 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+        }
+        .cont p {
+            height: 5pc;
+            width: 80pc;
+            margin-left: 90px;
+            margin-top: 90px;
+            text-align: center;
+            background-color: rgb(211, 216, 216);
+            padding-top: 70px;
+            font-weight: bold;
+        }
+        .below p {
+            margin-top: 100px;
+            margin-left: 90px;
+            font-weight: bold;
+        }
+        .below li {
+            margin-top: 20px;
+            margin-left: 60px;
+        }
+        .below a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="float: left; font-size: 30px;">FRAPPE ACTIVITY</li>
+                <li><a href="http://127.0.0.1:5500/templates/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/templates/about.html">About</a></li>
+                <li><a href="http://127.0.0.1:5500/templates/contact.html">Contact</a></li>
+                <li><a href="http://127.0.0.1:5500/templates/predict.html">Classify Activity</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="logo">
+            <a href="#" style="padding: 30px; font-size: 15px; margin-left: 50px; color: dodgerblue; text-decoration: none;">Home</a>
+            <label for="Classify Activity" style="font-size: 15px;">Classify Activity</label>
+        </div>
+        <div class="below" style="padding: 15px; margin-left: 70px; font-size: 30px; font-weight: bold; color: cornflowerblue;">
+            <label for="Classification Activity">Classification Result</label>
+        </div>
+    </main>
+    <div class="cont">
+        <p> {{ prediction_text }}</p>
+    </div>
+    <section class="below">
+        <p>Useful Links</p>
+        <ul>
+            <li><a href="/home"> > Home</a></li>
+            <li><a href="/about"> > About us</a></li>
+        </ul>
+    </section>
+</body>
+</html>
